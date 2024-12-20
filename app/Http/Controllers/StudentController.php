@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return 'Create';
     }
 
     /**
@@ -30,7 +30,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'Store';
     }
 
     /**
@@ -38,7 +38,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return 'Show';
     }
 
     /**
@@ -46,7 +46,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return 'Edit';
     }
 
     /**
@@ -54,7 +54,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        return 'Update';
     }
 
     /**
@@ -62,6 +62,6 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        return 'Destroy';
     }
 }
