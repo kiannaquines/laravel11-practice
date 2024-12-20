@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomePageController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
-Route::get('/',[HomePageController::class,'index'])->name('index');
-Route::get('/login',[LoginController::class,'login'])->name('login');
-Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+// Student URLS
+Route::get('students/',[StudentController::class,'index'])->name(name: 'students_list');
+
+
+// Users URLS
+Route::get('users/',[UserController::class,'index'])->name(name: 'users_list');
+
+
