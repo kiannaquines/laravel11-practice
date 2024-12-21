@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return 'Create';
+        return view('students.create');
     }
 
     /**
@@ -30,7 +30,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Store';
+
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'student_id' => 'required|string|max:20',
+        ]);
+
+        Student::create($validated);
+        return redirect()->route('students.index')->with('success', 'Student created successfully.');
     }
 
     /**
@@ -38,7 +46,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return 'Show';
+        return view('students.show',["student" => $student]);
     }
 
     /**
@@ -46,7 +54,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('form', $student);
+        return view('students.edit', ["student" => $student]);
     }
 
     /**
@@ -62,7 +70,7 @@ class StudentController extends Controller
 
         $student->update($validated);
 
-        return redirect()->route('student.edit', $student->id)->with('success', 'Student updated successfully.');
+        return redirect()->route('students.index', $student->id)->with('success', 'Student updated successfully.');
     }
 
     /**
@@ -70,6 +78,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        return 'Destroy';
+        $student->delete();
+        return redirect()->route('students.index')->with('success', 'Student deleted successfully.');
     }
 }
