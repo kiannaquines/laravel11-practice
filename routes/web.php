@@ -15,8 +15,9 @@ Route::delete('students/delete/{id}', [StudentController::class, 'destroy'])->na
 
 // Users URLS
 Route::get('users/', [UserController::class, 'index'])->name(name: 'users.index');
-Route::post('users/create', [UserController::class, 'create'])->name(name: 'users.create');
-Route::get('users/edit/{id}', [UserController::class, 'edit'])->name(name: 'users.edit');
-Route::put('users/update/{id}', [UserController::class, 'update'])->name(name: 'users.update');
-Route::get('users/show/{id}', [UserController::class, 'show'])->name(name: 'users.show');
-Route::delete('users/delete/{id}', [UserController::class, 'destroy'])->name(name: 'users.destroy');
+Route::get('users/create', [UserController::class, 'create'])->name(name: 'users.create');
+Route::post('users/store', [UserController::class, 'store'])->name(name: 'users.store');
+Route::get('users/{id}/edit', [UserController::class, 'edit'])->name(name: 'users.edit');
+Route::put('users/{id}/update', [UserController::class, 'update'])->name(name: 'users.update');
+Route::get('users/{id}/show', [UserController::class, 'show'])->name(name: 'users.show');
+Route::delete('users/{id}/delete', [UserController::class, 'destroy'])->name(name: 'users.destroy');
