@@ -14,7 +14,7 @@ class StudentController extends Controller
     {
         $context = [];
         $context['students'] =  Student::all();
-        return view('students',$context);
+        return view('students/students',$context);
     }
 
     /**
@@ -46,7 +46,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return 'Edit';
+        return view('form', $student);
     }
 
     /**
@@ -54,7 +54,15 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        return 'Update';
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'student_id' => 'required|string|max:20',
+        ]);
+
+        $student->update($validated);
+
+        return redirect()->route('student.edit', $student->id)->with('success', 'Student updated successfully.');
     }
 
     /**
