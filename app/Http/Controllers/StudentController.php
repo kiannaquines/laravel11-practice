@@ -14,7 +14,7 @@ class StudentController extends Controller
     {
         $context = [];
         $context['students'] =  Student::all();
-        return view('students/students',$context);
+        return view('students.index',$context);
     }
 
     /**

@@ -6,16 +6,18 @@
               <tr>
                 <th class="border border-slate-100 p-2 text-slate-700">Fullname</th>
                 <th class="border border-slate-100 p-2 text-slate-700">Email Address</th>
+                <th class="border border-slate-100 p-2 text-slate-700">Student ID</th>
                 <th class="border border-slate-100 p-2 text-slate-700">Actions</th>
               </tr>
             </thead>
             <tbody>
-                @foreach($users as $user)
+                @foreach($students as $student)
                 <tr>
-                    <td class="border border-slate-100 p-2 text-slate-500">{{ $user->name }}</td>
-                    <td class="border border-slate-100 p-2 text-slate-500">{{ $user->email }}</td>
+                    <td class="border border-slate-100 p-2 text-slate-500">{{ $student->name }}</td>
+                    <td class="border border-slate-100 p-2 text-slate-500">{{ $student->email }}</td>
+                    <td class="border border-slate-100 p-2 text-slate-500">{{ $student->student_id }}</td>
                     <td class="border border-slate-100 p-2 text-slate-500">
-                        <a href="" class="text-slate-500 font-semibold">Edit</a>
+                        <a href="" class="text-neutral-500 font-semibold">Edit</a>
                         <a href="" class="text-slate-500 font-semibold">Delete</a>
                     </td>
                 </tr>
