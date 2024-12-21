@@ -17,12 +17,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
-
 Route::middleware(['auth','verified'])->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('students', StudentController::class);
 });
-
 
 require __DIR__.'/auth.php';
