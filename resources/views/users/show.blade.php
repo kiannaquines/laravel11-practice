@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="w-1/2 mx-auto mt-5">
         <h2 class="text-2xl">Student Information</h2>
         <div class="mt-5">
@@ -10,4 +10,4 @@
             </div>
         </div>
     </div>
-</x-layout>
+</x-app-layout>

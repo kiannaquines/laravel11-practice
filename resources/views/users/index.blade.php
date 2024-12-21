@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <div class="p-5 w-1/2 mx-auto mt-5">
         <div class="flex gap-2">
             <a href="{{ route('users.create') }}" class="flex w-1/2 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-3">Create User</a>
@@ -35,4 +35,4 @@
         </table>
     </div>
     
-</x-layout>
+</x-app-layout>
